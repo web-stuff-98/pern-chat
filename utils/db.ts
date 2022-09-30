@@ -4,12 +4,7 @@ declare global {
     var pool: Pool | any
 }
 
-global.pool = global.pool ? global.pool : new Pool(process.env.NODE_ENV !== "development" ? {
-    connectionString: process.env.POSTGRES_DB_URI,
-    password: process.env.POSTGRES_PASSWORD,
-    user: process.env.POSTGRES_USER,
-    max: 2,
-} : {
+global.pool = global.pool ? global.pool : new Pool({
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DATABASE,
     host: process.env.POSTGRES_HOST,
