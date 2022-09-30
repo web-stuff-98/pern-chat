@@ -7,6 +7,7 @@ declare global {
 global.pool = global.pool ? global.pool : new Pool(process.env.NODE_ENV !== "development" ? {
     connectionString: process.env.POSTGRES_DB_URI,
     password: process.env.POSTGRES_PASSWORD,
+    user: process.env.POSTGRES_USER,
     max: 2,
 } : {
     user: process.env.POSTGRES_USER,
