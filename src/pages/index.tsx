@@ -52,7 +52,7 @@ const About = () => {
         </ul>
         <ul>
           <label>Modules</label>
-          <li>PostgreSQL</li>
+          <li>Amazon PostgreSQL RDS</li>
           <li>Cloudinary</li>
           <li>Next.js</li>
           <li>SASS</li>
