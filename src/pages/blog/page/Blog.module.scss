@@ -1,0 +1,116 @@
+@use "../../../../styles/variables";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .explore {
+        width: 100%;
+        position: relative;
+        height: 100%;
+
+        .hiddenTopRef {
+            width: 100%;
+            height: 0px;
+        }
+
+        .cardContainer {
+            width: 100%;
+            /* crazy calc (second calc is the height of the pinned section)*/
+            height: calc(calc(1 / var(--blog-height-division)) * (100vh - var(--header-height) - var(--nav-height) - var(--footer-height)));
+            padding: var(--padding-base);
+
+            .card {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+
+                .imageContainer {
+                    width: calc(50% + var(--header-one) - var(--padding-base));
+                    min-width: 40%;
+                    height: 100%;
+                    overflow: hidden;
+                    cursor: pointer;
+                    position: relative;
+                    border: variables.$borderPale;
+                    border-radius: 3px;
+
+                    img {
+                        object-fit: cover;
+                    }
+                }
+
+                .text {
+                    margin: auto;
+                    text-align: center;
+                    padding: var(--padding-base);
+                    width: 66.66%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    text-align: left;
+
+                    .title {
+                        margin: 0;
+                        margin-bottom: 4px;
+                        font-weight: 300;
+                        font-family: var(--font-heading);
+                        font-size: var(--header-two);
+                        line-height: 1;
+                    }
+
+                    .description {
+                        line-height: 1;
+                        font-family: var(--font-primary);
+                        font-size: var(--header-four);
+                    }
+
+                    .tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: flex-end;
+                        gap: 3px;
+                        padding: var(--padding-base) 0;
+
+
+                        .tag,
+                        .tagSelected {
+                            padding: 3px var(--padding-base);
+                            background: var(--secondary);
+                            font-family: var(--font-heading);
+                            border-radius: 3px;
+                            cursor: pointer;
+                            color: white;
+                            box-shadow: 0px 0px 0px var(--base-solid);
+                            transition: box-shadow 100ms ease, transform 100ms ease;
+                            outline: 1px solid var(--base);
+                        }
+
+                        .tag:hover {
+                            background: var(--base);
+                        }
+
+                        .tagSelected {
+                            background: var(--base-light);
+                        }
+
+
+                        .tag:hover,
+                        .tagSelected:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0px 2px 0px var(--base-solid);
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+}

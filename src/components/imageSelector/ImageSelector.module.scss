@@ -1,0 +1,34 @@
+@use "../../../styles/variables";
+
+.container {
+    position: relative;
+    
+    svg {
+        font-size: var(--header-one);
+        position: absolute;
+        top:calc(50% - var(--header-one) * 0.5);
+        cursor:pointer;
+    }
+    svg:hover {
+        transform: scale(1.1);
+    }
+    svg:first-of-type {
+        left:0;
+        stroke-width: 1px;
+    }
+    svg:last-of-type {
+        right:0;
+        stroke-width: 1px;
+    }
+
+    .imageContainer {
+        position: absolute;
+        width: calc(100% - var(--header-one) * 2);
+        left:var(--header-one);
+        height:100%;
+        border: variables.$borderBase;
+        background-size: cover;
+        background-position: center;
+        box-shadow: variables.$shadowDropSmall, variables.$shadowDropBase;
+    }
+}

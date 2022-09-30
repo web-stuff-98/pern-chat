@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .imageContainer {
+        position: relative;
+        height: 50%;
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    svg:nth-child(1) {
+        left: calc(0%);
+        top: calc(100% - var(--header-one) * 0.5);
+        font-size: var(--header-one);
+        position: absolute;
+        height: var(--header-one);
+        width: var(--header-one);
+
+    }
+
+    svg:nth-child(2) {}
+
+
+    .htmlContainer {
+        position: relative;
+
+    }
+}

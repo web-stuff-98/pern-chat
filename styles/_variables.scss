@@ -1,0 +1,28 @@
+//layout and component colours
+$header: var(--foreground);
+$footer: var(--background);
+$nav: transparent;
+
+//borders
+$borderHeavy: 2px solid var(--base-solid);
+$borderBase: 1px solid var(--base-solid);
+$borderLight: 1px solid var(--base-light);
+$borderPale: 1px solid var(--base-pale);
+$borderDashedHeavy: 2px dashed var(--base-solid);
+$borderDashedBase: 1px dashed var(--base-solid);
+$borderDashedLight: 1px dashed var(--base-light);
+$borderDashedPale: 1px dashed var(--base-pale);
+
+//masks
+$maskCenter: linear-gradient(to right, transparent 0%, black 50%, transparent 100%);
+$maskLeft: linear-gradient(to left, transparent 0%, black 100%);
+$maskRight: linear-gradient(to right, transparent 0%, black 100%);
+$maskCenterVertical: linear-gradient(to top, transparent 0%, black 50%, transparent 100%);
+$maskTopVertical: linear-gradient(to top, transparent 0%, black 100%);
+$maskBottomVertical: linear-gradient(to bottom, transparent 0%, black 100%);
+
+//shadows
+$shadowFlatBase: 0px 0px 6px rgba(0, 0, 0, 0.333);
+$shadowDropBase: 0px 3px 6px rgba(0, 0, 0, 0.333);
+$shadowFlatSmall: 0px 0px 3px rgba(0, 0, 0, 0.333);
+$shadowDropSmall: 0px 1px 2px rgba(0, 0, 0, 0.444);

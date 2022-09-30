@@ -1,0 +1,106 @@
+@use "../../../styles/variables";
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .buttons {
+        display: flex;
+        gap:var(--padding-base);
+        button {
+            margin-top: var(--padding-base);
+            padding: var(--padding-base);
+            padding-right: calc(var(--padding-base) * 0.66);
+            background: transparent;
+            color: var(--base-solid);
+            text-shadow: none;
+            border: variables.$borderHeavy;
+            font-size: var(--header-two);
+            margin-bottom: var(--padding-base);
+        }
+    }
+
+    h1:first-of-type {
+        text-align: center;
+        font-family: var(--font-heading);
+        margin-top: 1pc;
+        margin-bottom: 2pc;
+        font-size: calc(var(--header-one) * 1.25);
+    }
+
+    .html {
+        padding: calc(var(--padding-base) * 3);
+        box-sizing: border-box;
+        outline: none;
+        tab-size: 4;
+        -moz-tab-size: 4;
+        text-align: left;
+        white-space: pre-wrap;
+        height: fit-content;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 100%;
+            padding: var(--padding-base);
+            margin: var(--header-one) 0;
+            object-fit: scale-down;
+            top:0;
+        }
+
+        blockquote {
+            border-left: 5px solid var(--base-light);
+            padding-left: 6px;
+            width: 80%;
+        }
+
+        h2,h3,h4,h5 {
+            text-align: left;
+            width: 100%;
+        }
+
+        ul,
+        ol {
+            padding: 0 min(10%, 3pc);
+            width: 100%;
+            margin: 0;
+        }
+
+        li:last-child {
+            margin-bottom: 0.666pc;
+        }
+    }
+
+    .imageContainer {
+        position: relative;
+        width: 100%;
+        min-height: 33.333vh;
+        img {
+            width: 100%;
+            position: absolute;
+            object-fit: cover;
+        }
+        svg {
+            position: absolute;
+            fill:white;
+            left: calc(50% - var(--header-one));
+            bottom: 12px;
+            z-index: 98;
+            height: calc(2 * var(--header-one));
+            width: calc(2 * var(--header-one));
+            filter: opacity(0);
+            transition: filter 100ms ease, transform 100ms ease;
+        }
+    }
+    .imageContainer:hover {
+        svg {
+            filter: opacity(1);
+            transform: scale(1.166);
+        }
+    }
+}

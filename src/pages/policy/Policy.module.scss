@@ -1,0 +1,14 @@
+.container {
+    max-width: calc(100vw - var(--horizontal-whitespace) * 2.5 - var(--padding-base) * 4);
+    padding: calc(var(--padding-base) * 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1 {
+        margin: 0;
+        font-family: var(--font-heading);
+        margin-bottom: var(--padding-base);
+    }
+}

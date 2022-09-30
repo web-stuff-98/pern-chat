@@ -1,0 +1,59 @@
+.inputLabelWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+    .inputAndButton {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: var(--padding-base);
+
+        input {
+            flex-grow: 1;
+        }
+
+        button {
+            margin: 0;
+            height: 100%;
+            flex-shrink: 1;
+            width: fit-content;
+            max-width: fit-content;
+            white-space: nowrap;
+        }
+    }
+
+    label {
+        white-space: nowrap;
+        font-family: var(--font-heading);
+        display: flex;
+        align-items: center;
+        margin-bottom: var(--padding-base);
+    }
+
+    input,
+    label {
+        margin: 0;
+        width: 100%;
+        max-width: none;
+        flex-grow: 1;
+    }
+}
+
+.inputLabelWrapperDouble .inputLabelWrapper:last-child {
+    margin-left: 0.5pc;
+}
+
+.inputLabelWrapperDouble {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.inputLabelWrapperDouble .inputLabelWrapper {
+    flex-grow: 1;
+    max-width: 50%;
+}

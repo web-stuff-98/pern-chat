@@ -1,0 +1,44 @@
+@use "../../styles/variables";
+
+.container {
+    text-align: center;
+    padding: calc(var(--paragraph-size) * 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    hr {
+        width: 100%;
+        border: none;
+        border-bottom: variables.$borderBase;
+        mask-image: variables.$maskCenter;
+        -webkit-mask-image: variables.$maskCenter;
+    }
+    h1 {
+        font-family: var(--font-heading);
+        font-size: calc(var(--header-one) * 1.5);
+        text-transform: uppercase;
+    }
+
+    label {
+        font-size: var(--header-one);
+    }
+
+    .lists {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        ul {
+            margin: var(--padding-base);
+            padding: 0;
+            padding-left: 1pc;
+        }
+    }
+
+    h3, h4 {
+        font-weight: 300;
+        font-size: var(--header-four);
+    }
+
+}

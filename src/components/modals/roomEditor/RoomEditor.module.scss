@@ -1,0 +1,38 @@
+@use '../../../../styles/variables';
+
+.container {
+    width: 100%;
+    max-width: 25pc;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    h1 {
+        font-family: var(--font-heading);
+        margin: 0;
+        padding: var(--padding-base);
+        text-transform: uppercase;
+    }
+    h2 {
+        font-family: var(--font-heading);
+        margin: 0;
+    }
+
+    input[type=file] {
+        display: none;
+    }
+
+    .coverImage {
+        border: variables.$borderLight;
+        border-bottom: 2px solid var(--base);
+        border-radius: 3px;
+        height: var(--input-height);
+        background: var(--base-pale);
+        background-position: center;
+        background-size: cover;
+    }
+
+    p {
+        margin: 0;
+    }
+}

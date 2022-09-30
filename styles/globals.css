@@ -1,0 +1,277 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--base-solid);
+  line-height: 1;
+}
+
+@font-face {
+  font-family: "Doboto Light";
+  src: url("/DuctapeRegular-nR56P.otf");
+}
+@font-face {
+  font-family: "Area Kilometer 50";
+  src: url("/Figtree-ExtraBold.ttf");
+}
+
+.pfp {
+  width: 40px;
+  height: 40px;
+  border: 1px outset var(--base);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.333);
+  background: var(--default-pfp-url);
+  background-size: cover;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: var(--header-one);
+}
+
+h2 {
+  font-size: var(--header-two);
+}
+
+h3 {
+  font-size: var(--header-three);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--header-four);
+}
+
+
+p,
+label,
+strong,
+b,
+button,
+input,
+textarea,
+div,
+span {
+  font-size: var(--paragraph-size);
+  font-family: var(--font-primary);
+  line-height: 1.166;
+}
+
+label {
+  line-height: 1.166;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-heading);
+}
+
+p,
+label,
+b,
+strong {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-primary);
+  margin: calc(var(--padding-base) * 1) 0;
+}
+
+ul,
+li,
+ol {
+  text-align: left;
+}
+
+li {
+  margin: 0;
+}
+
+li:last-of-type {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0 10vw;
+}
+
+.inputError {
+  position: absolute;
+  right: 0;
+  filter: opacity(0.5) drop-shadow(0px 1px 0.5px rgba(0, 0, 0, 0.333));
+  transition: filter 100ms ease;
+  text-shadow: 0px 2px 1.5px black;
+  background: black;
+  padding: 2px var(--padding-base);
+  border: 1px solid rgba(255, 255, 255, 0.333);
+  color: white;
+  z-index: 98;
+  pointer-events: none;
+}
+
+input,
+textarea {
+  background: none;
+  outline: none;
+  border: 1px solid var(--base-light);
+  height: var(--input-height);
+  background: var(--foreground);
+  font-family: var(--font-primary);
+  position: relative;
+  border-radius: 3px;
+}
+
+textarea {
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border: 1px solid transparent;
+  outline: 2px solid var(--input-focus);
+}
+
+button {
+  padding: var(--padding-base);
+  padding-bottom: calc(var(--padding-base) + 1px);
+  background-color: var(--button);
+  border: 1px solid var(--base-light);
+  font-size: calc(var(--paragraph-size) * 1.1666);
+  text-shadow: 0px 1px 4px black;
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  line-height: 1;
+  border-radius: 3px;
+  transition: filter 100ms ease;
+  border-bottom: 3px solid var(--base-light);
+}
+
+button:hover {
+  filter: brightness(1.166);
+}
+
+
+a {
+  color: rgb(25, 25, 225);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(137, 135, 180)
+}
+
+/*
+https://paletton.com/#uid=33I0T0kmlp5cPAqi9t4q0l4uGg8
+*/
+:root {
+  --font-primary: 'Doboto Light';
+  --font-heading: 'Area Kilometer 50';
+
+  /* Component and layout dimensions */
+  --header-height: 10vh;
+  --footer-height: max(7.5vh, 3.333pc);
+  --nav-height: max(3.666vh, 1.66pc);
+  --horizontal-whitespace: 26.75vw;
+  --input-height: 2pc;
+  --pinned-section-height: 11.666vh;
+  --blog-height-division: 3;
+
+  --padding-base: min(1.5vw, 0.75vh, 0.333pc);
+
+  /* These variables control border colors, text colors, et cet */
+  --base-solid: rgba(0, 0, 0, 1);
+  --base: rgba(0, 0, 0, 0.666);
+  --base-light: rgba(0, 0, 0, 0.333);
+  --base-pale: rgba(0, 0, 0, 0.1666);
+  --base-solid-contrast: rgba(255, 255, 255, 1);
+  --base-contrast: rgba(255, 255, 255, 0.8);
+  --base-light-contrast: rgba(255, 255, 255, 0.2);
+  --base-pale-contrast: rgba(255, 255, 255, 0.06);
+
+  /* Font sizes */
+  --header-one: min(28px, 5.6vw, 3.5vh);
+  --header-two: min(24px, 5vw, 3vh);
+  --header-three: min(22px, 4.8vw, 2.5vh);
+  --header-four: min(15px, 4.6vw, 2.4vh);
+  --paragraph-size: min(14.5px, 3.866vw, 2.3vh);
+
+  /* colours */
+  --foreground: whitesmoke;
+  --background: rgb(14, 14, 14);
+  --layout-background: whitesmoke;
+  --tertiary: rgb(200, 151, 60);
+  --tertiary-dark: rgb(168, 120, 31);
+  --tertiary-light: rgb(232, 186, 100);
+  --secondary: rgb(200, 64, 60);
+  --secondary-dark: rgb(168, 34, 31);
+  --secondary-light: rgb(232, 103, 100);
+  --primary: rgb(49, 79, 133);
+  --primary-dark: rgb(30, 59, 112);
+  --primary-light: rgb(75, 103, 154);
+  --error: red;
+  --warning: orange;
+  --success: lime;
+  --input-focus: rgb(67, 73, 245);
+  --button: rgb(24, 24, 24);
+
+  --google-login: white;
+
+  /* extra layout colours */
+  --dark-solid: rgb(24, 24, 24);
+  --search-button: rgba(14, 28, 160, 0.8);
+
+  /*shared urls*/
+  --cross-background: url(/crossbackground.png);
+}
+
+
+.darkMode {
+  --base-solid: rgba(255, 255, 255, 1);
+  --base: rgba(255, 255, 255, 0.666);
+  --base-light: rgba(255, 255, 255, 0.2);
+  --base-pale: rgba(255, 255, 255, 0.07);
+  --base-solid-contrast: rgba(0, 0, 0, 1);
+  --base-contrast: rgba(0, 0, 0, 0.666);
+  --base-light-contrast: rgba(0, 0, 0, 0.2);
+  --base-pale-contrast: rgba(0, 0, 0, 0.0333);
+
+  --foreground: rgb(9, 9, 9);
+  --background: rgb(9, 9, 9);
+  --layout-background: rgb(9, 9, 9);
+
+  --button: rgb(24, 24, 24);
+
+  --header: rgb(9, 9, 9);
+  --footer: rgb(9, 9, 9);
+  --nav: rgb(9, 9, 9);
+
+  --google-login: rgb(24, 24, 24);
+
+  --cross-background: url(/crossbackground_dark.png);
+}
+
+.ql-container {
+  height: auto !important;
+}
+
+.ql-editor {
+  height: auto !important;
+}

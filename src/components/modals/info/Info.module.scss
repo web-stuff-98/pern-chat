@@ -1,0 +1,22 @@
+@use '../../../../styles/variables';
+
+.container {
+    width: 100%;
+    max-width: 25pc;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    h1 {
+        font-family: var(--font-heading);
+        margin: 0;
+    }
+    h2 {
+        font-family: var(--font-heading);
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+}

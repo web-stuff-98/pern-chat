@@ -1,0 +1,223 @@
+@use "./variables";
+
+.container {
+    padding: var(--padding-base);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--padding-base);
+
+    h1 {
+        text-align: center;
+        font-family: var(--font-heading);
+    }
+
+    hr {
+        width: 100%;
+        border: none;
+        border-bottom: variables.$borderDashedPale;
+        margin: 0;
+    }
+
+    .bottomButtons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--padding-base);
+    }
+
+    .menuSection {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-base);
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .conversationsSection {
+        .user {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+    }
+
+    .conversationSection, .roomSection {
+        flex-grow: 1;
+        width: min(25pc, 90vw);
+    }
+
+    .roomListSection,
+    .conversationsSection,
+    .conversationSection,
+    .roomSection {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-base);
+
+        .heading,.headingWithImage {
+            width: 100%;
+            border-radius: 3px;
+            margin: 0;
+            position: relative;
+            height: 4pc;
+
+            .inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                font-size: var(--header-one);
+                font-weight: 600;
+                font-family: var(--font-heading);
+                text-align: center;
+            }
+        }
+
+        .headingWithImage {
+            background-size: cover;
+            background-position: center;
+            border: variables.$borderPale;
+            .inner {
+                color: white;
+                backdrop-filter: blur(2px) brightness(0.5);
+                -webkit-backdrop-filter: blur(2px) brightness(0.5);
+                text-shadow: variables.$shadowDropBase;
+            }
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--padding-base);
+            max-height: min(33.33vh, 15pc);
+            overflow-y: scroll;
+            padding-right: var(--padding-base);
+
+            .room,
+            .roomWithCoverImage {
+                position: relative;
+                border: variables.$borderPale;
+                border-radius: 3px;
+                min-height: 2pc;
+
+                .inner {
+                    position: absolute;
+                    padding: 3px;
+                    padding-left: 6px;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+
+        .message {
+            padding: var(--padding-base) 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            form {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .text {
+                text-align: left;
+                flex-grow: 1;
+                padding: var(--padding-base);
+                word-break: break-all;
+                font-size: 14px;
+            }
+
+            .editInput {
+                border: none;
+                outline: none;
+                width: 100%;
+                border-bottom: 1px solid var(--base);
+                border-radius: 0px;
+            }
+        }
+
+        .icons {
+            display: flex;
+            gap: 2px;
+            background: var(--base-light);
+            border: variables.$borderLight;
+            padding: 2px;
+            height: 1.5pc;
+            min-width: max-content;
+            border-radius: 3px;
+
+            svg {
+                fill: white;
+                box-shadow: 0px 1px 0px black;
+                width: var(--heading-two);
+                height: var(--heading-two);
+                border: variables.$borderBase;
+                background: var(--primary);
+                padding: 1px;
+                border-radius: 3px;
+                cursor: pointer;
+                filter: opacity(0.75);
+                transition: filter 100ms ease;
+            }
+
+            svg:hover {
+                filter: opacity(1);
+            }
+        }
+
+
+        input {
+            border: 2px solid var(--base-pale);
+        }
+
+        input:focus {
+            border: 2px solid var(--input-focus);
+            outline: none;
+        }
+    }
+
+    .roomListSection {
+        .list {
+            .roomWithCoverImage {
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                outline: variables.$borderPale;
+
+                * {
+                    color: white;
+                    text-shadow: 0px 2px 2px black;
+                    font-weight: 600;
+                }
+
+                .inner {
+                    backdrop-filter: blur(1px) brightness(0.75);
+                    -webkit-backdrop-filter: blur(1px) brightness(0.75);
+                }
+            }
+        }
+    }
+
+
+    .roomSection {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-base);
+    }
+}

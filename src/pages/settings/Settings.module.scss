@@ -1,0 +1,82 @@
+@use "../../../styles/variables";
+
+.container {
+    padding: var(--padding-base);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-base);
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.333pc;
+        gap: 0.2pc;
+        font-family: var(--font-heading);
+        font-weight: 600;
+
+        svg {
+            width: 2pc;
+            height: 2pc;
+
+        }
+    }
+
+    label {
+        justify-content: center;
+    }
+
+    h3 {
+        margin: 0;
+        font-weight: 300;
+        font-family: var(--font-heading);
+    }
+
+    .changePasswordForm {
+
+        button {
+            width: 100%;
+            margin-top: var(--padding-base);
+        }
+
+        input {
+            text-align: center;
+        }
+    }
+
+    .pfpInputContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--padding-base);
+        text-align: center;
+        width: 100%;
+
+        button {
+            width: 100%;
+        }
+
+        label {
+            max-width: 16.66pc;
+            font-family: var(--font-primary);
+        }
+
+        input[type=file] {
+            display: none;
+        }
+
+        .pfp {
+            background: var(--base-pale);
+            width: 48px;
+            height: 48px;
+            border: variables.$borderLight;
+            border-radius: 3px;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            box-shadow: variables.$shadowDropSmall;
+        }
+    }
+}

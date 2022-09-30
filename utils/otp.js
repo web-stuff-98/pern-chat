@@ -1,0 +1,1 @@
+export default function OTP() {return Math.random().toString(36).slice(2) + Math.random().toString(36).toUpperCase().slice(2).slice(0, 10).toUpperCase()}
