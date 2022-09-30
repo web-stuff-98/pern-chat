@@ -1,19 +1,14 @@
 import classes from "./Editor.module.scss"
 import formClasses from "../../../styles/FormClasses.module.scss"
-
 import { useFormik } from "formik"
-
 import type { ChangeEvent } from "react"
 import { useRef, useState, useEffect } from "react"
 import axios, { AxiosError, AxiosRequestConfig } from "axios"
-
 import { useInterface } from "../../context/InterfaceContext"
 import { useRouter } from "next/router"
 import { IResponseMessage } from "../../interfaces/GeneralInterfaces"
-
 import HelpButton from "../../components/helpButton/HelpButton"
 import Image from "next/image"
-
 import has from "lodash/has"
 import ProgressBar from "../../components/progressBar/ProgressBar"
 
@@ -187,7 +182,7 @@ export default function Editor() {
         }
     }
 
-    const [generating, setGenerating] = useState(false)
+    /*const [generating, setGenerating] = useState(false)
     const createAndUploadRandomPost = async () => {
         setGenerating(true)
         await getRandomImage()
@@ -200,7 +195,7 @@ export default function Editor() {
                 createAndUploadRandomPost()
         }, 6000)
         return () => clearInterval(i)
-    }, [])
+    }, [])*/
 
     return (
         <form onSubmit={formik.handleSubmit} className={classes.container}>

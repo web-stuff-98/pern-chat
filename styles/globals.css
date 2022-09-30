@@ -16,11 +16,11 @@ img {
 }
 
 @font-face {
-  font-family: "Doboto Light";
+  font-family: "Ductape";
   src: url("/DuctapeRegular-nR56P.otf");
 }
 @font-face {
-  font-family: "Area Kilometer 50";
+  font-family: "Figtree";
   src: url("/Figtree-ExtraBold.ttf");
 }
 
@@ -182,8 +182,8 @@ a:visited {
 https://paletton.com/#uid=33I0T0kmlp5cPAqi9t4q0l4uGg8
 */
 :root {
-  --font-primary: 'Doboto Light';
-  --font-heading: 'Area Kilometer 50';
+  --font-primary: 'Ductape';
+  --font-heading: 'Figtree';
 
   /* Component and layout dimensions */
   --header-height: 10vh;
