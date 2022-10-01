@@ -4,10 +4,8 @@ import imageProcessing from '../../../utils/imageProcessing'
 import embeddedImageProcessing from "../../../utils/embeddedImageProcessing"
 import applyMiddleware from '../../../utils/applyMiddleware'
 import getRateLimitMiddlewares from '../../../utils/applyRatelimit'
-import has from 'lodash/has'
 import cloudinary from "cloudinary"
 import pool from '../../../utils/db'
-import busboy from 'busboy'
 
 import * as Yup from "yup"
 
@@ -45,6 +43,8 @@ export default async function handler(
           //@ts-expect-error
           .test('missingHashtag', 'You need an # symbol for each tag.', (value: string) => (value && value.charAt(0) === '#'))
           //@ts-expect-error
+          .test('noSpaces', 'Tags cannot have spaces.', (value: string) => (value && !value.includes(" ")))
+          //@ts-expect-error
           .test('tooManyTags', 'Maximum 8 tags.', (value: string) => (value && value.split('#').length <= 8))
           //@ts-expect-error
           .test('tagTooLong', 'One of your tags is too long. Max 24 characters for each tag.', (value: string) => {
@@ -79,7 +79,7 @@ export default async function handler(
         imageBlur,
       ])
       if (insertQuery.rowCount === 0) return res.status(500).json({ message: "Some internal error. Post wasn't inserted." })
-      return res.status(201).json({ message: "Post created", id:insertQuery.rows[0].id })
+      return res.status(201).json({ message: "Post created", id: insertQuery.rows[0].id })
     } catch (e) {
       console.error(e)
       return res.status(500).json({ message: "Internal error" })
@@ -96,6 +96,8 @@ export default async function handler(
         tags: Yup.string().max(70, 'Tags too long. Maximum 70 characters')
           //@ts-expect-error
           .test('missingHashtag', 'You need an # symbol for each tag.', (value: string) => (value && value.charAt(0) === '#'))
+          //@ts-expect-error
+          .test('noSpaces', 'Tags cannot have spaces.', (value: string) => (value && !value.includes(" ")))
           //@ts-expect-error
           .test('tooManyTags', 'Maximum 8 tags.', (value: string) => (value && value.split('#').length <= 8))
           //@ts-expect-error

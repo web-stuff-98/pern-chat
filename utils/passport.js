@@ -23,7 +23,7 @@ passport.use('google', new GoogleStrategy({
         if (findUserQuery.rowCount === 0) {
             //create user
             //this query string is too long.
-            const createUserQuery = await pool.query("INSERT INTO account (email,username,password,conversations,rooms,inbox,verify_email_otp,login_method,tokens,protected,email_verified) VALUES($1,$2,$3::VARCHAR(200),$4::INT[],$5::INT[],$6,$7,$8,$9::VARCHAR(200)[],$10,$11) RETURNING id,username,email;", [
+            const createUserQuery = await pool.query("INSERT INTO account (email,username,password,conversations,rooms,inbox,verify_email_otp,login_method,tokens,protected,email_verified,timestamp) VALUES($1,$2,$3::VARCHAR(200),$4::INT[],$5::INT[],$6,$7,$8,$9::VARCHAR(200)[],$10,$11,$12) RETURNING id,username,email;", [
                 profile.email.toLowerCase().trim(),
                 profile.displayName,
                 "", //password is empty because google login
@@ -34,7 +34,8 @@ passport.use('google', new GoogleStrategy({
                 "google",
                 [],
                 false,
-                true //email is automatically verified because google login
+                true, //email is automatically verified because google login
+                Date.now()
             ])
             if (createUserQuery.rowCount === 0) return res.status(500).json({ message: "Failed - Internal error" })
             const token = jwt.sign(createUserQuery.rows[0].id, process.env.JWT_SECRET)

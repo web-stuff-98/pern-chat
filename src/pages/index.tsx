@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import classes from './About.module.scss'
-
 import { useRouter } from 'next/router'
-
 import { useEffect } from "react"
 import { useModal } from '../context/ModalContext'
 import { EModalType } from '../enums/GeneralEnums'
@@ -29,7 +27,7 @@ const About = () => {
       <label>By Jason J</label>
       <h1>Pern-Chat</h1>
       <h2>PostgreSQL, Express, React and Node</h2>
-      <h3>This requires a login to use, but you can <a href='https://temp-mail.org'>create a temporary email</a> instead if you don&apos;t want to use your email address, OR just use one of the test accounts. The emails for the test accounts are test 1 to 6 @test.com and the password is Test1234!. The repository is also public on my github account. Everything gets deleted automatically after 20 minutes, including new accounts.</h3>
+      <h3>This requires a login to use, but you can <a href='https://temp-mail.org'>create a temporary email</a> instead if you don&apos;t want to use your email address, OR just use one of the test accounts. The emails for the test accounts are test 1 to 6 @test.com and the password is Test1234!<br/>The repository is also public on my github account. Everything gets deleted automatically after 20 minutes, including new accounts.</h3>
       <hr />
       <h4>You can create a chatroom or start a conversation with another user. You can also attach videos and images to messages. All images except attachment images update live using Pusher js. Click on a user inside a chatroom to start a direct conversation, or search for a user from the conversations section. Or you can create a post for the blog.</h4>
       <br />
