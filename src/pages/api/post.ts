@@ -73,7 +73,7 @@ export default async function handler(
         [],
         tags.split("#").map((tag: string) => tag.toLowerCase().trim()).filter((tag: string) => tag !== ''),
         slug,
-        true,
+        false,
         Date.now(),
         true,
         imageBlur,
