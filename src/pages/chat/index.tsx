@@ -1,6 +1,4 @@
 import classes from "../../../styles/Chat.module.scss"
-import formClasses from "../../../styles/FormClasses.module.scss"
-
 import { ChatSection } from "../../enums/ChatEnums"
 import { useChat } from "../../context/ChatContext"
 import Menu from "../../components/chat/Menu"

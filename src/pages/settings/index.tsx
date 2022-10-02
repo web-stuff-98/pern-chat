@@ -1,13 +1,10 @@
 import classes from "./Settings.module.scss"
 import formClasses from "../../../styles/FormClasses.module.scss"
-
 import { useState, useRef, useEffect } from "react"
 import type { ChangeEvent, FormEvent } from "react"
-
 import { FiSettings } from "react-icons/fi"
 import axios, { AxiosError } from "axios"
 import { IResponseMessage } from "../../interfaces/GeneralInterfaces"
-
 import has from "lodash/has"
 import { useAuth } from "../../context/AuthContext"
 import { useInterface } from "../../context/InterfaceContext"

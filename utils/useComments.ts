@@ -1,5 +1,4 @@
 import axios, { AxiosError } from "axios"
-
 import { useState, useEffect } from "react"
 import { usePusher } from "../src/context/PusherContext"
 import { useUsers } from "../src/context/UsersContext"

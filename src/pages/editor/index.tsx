@@ -182,7 +182,7 @@ export default function Editor() {
         }
     }
 
-    /*const [generating, setGenerating] = useState(false)
+    const [generating, setGenerating] = useState(false)
     const createAndUploadRandomPost = async () => {
         setGenerating(true)
         await getRandomImage()
@@ -195,7 +195,7 @@ export default function Editor() {
                 createAndUploadRandomPost()
         }, 6000)
         return () => clearInterval(i)
-    }, [])*/
+    }, [])
 
     return (
         <form onSubmit={formik.handleSubmit} className={classes.container}>

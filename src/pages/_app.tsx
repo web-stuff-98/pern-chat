@@ -1,10 +1,7 @@
 import '../../styles/globals.css'
 import '../../styles/quill.snow.css'
-
 import type { AppProps } from 'next/app'
-
 import Layout from '../components/layout/Layout'
-
 import { InterfaceProvider } from '../context/InterfaceContext'
 import { MouseProvider } from '../context/MouseContext'
 import { ModalProvider } from '../context/ModalContext'

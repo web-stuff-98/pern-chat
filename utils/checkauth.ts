@@ -1,7 +1,5 @@
 import { verify } from "jsonwebtoken"
-
 import pool from "./db"
-
 import has from "lodash/has"
 
 const checkAuth = async (cookies: any) => {
