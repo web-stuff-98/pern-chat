@@ -1,7 +1,7 @@
 module.exports.cleanUp = async (pool, cloudinary, pusher) => {
     try {
         //const twentyMinutesAgo = Date.now() - 1200
-        const twentyMinutesAgo = Date.now() - 5
+        const twentyMinutesAgo = Date.now() - 1200
         let deleteRoomIds = []
 
         ////// remove accounts older than 20 minutes, aside from the example accounts

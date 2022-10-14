@@ -10,7 +10,7 @@ global.pool = global.pool ? global.pool : new Pool({
     host: process.env.POSTGRES_HOST,
     password: process.env.POSTGRES_PASSWORD,
     port: Number(process.env.POSTGRES_PORT),
-    max: 2,
+    max: 5,
 })
 
 export default { query: (text: string, values?: any[]) => global.pool.query(text, values) }
