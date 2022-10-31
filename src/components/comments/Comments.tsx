@@ -39,12 +39,19 @@ export default function Comments({ postId }: { postId: number }) {
             setResMsg({ message: "", error: false, pending: resMsg.pending })
     }, [err])
 
+    const handleMessage = (data:any ) => setResMsg(data)
+    const handleBlocked = () => setResMsg({ message: "Too many requests", error: true, pending: false })
+
     useEffect(() => {
         if (!pusher) return
         const channel = pusher.subscribe(`post=${postId}`)
-        channel.bind('message', (data: any) => setResMsg(data))
-        channel.bind('blocked', () => setResMsg({ message: "Too many requests", error: true, pending: false }))
-        return () => pusher.unsubscribe()
+        channel.bind('message', handleMessage)
+        channel.bind('blocked', handleBlocked)
+        return () => {
+            channel.unbind("message", handleMessage)
+            channel.unbind("blocked", handleBlocked)
+            pusher.unsubscribe()
+        }
     }, [postId])
 
     const voteOnPostComment = async ({ commentId, isUpvote }: { commentId: string, isUpvote: boolean }) => {
